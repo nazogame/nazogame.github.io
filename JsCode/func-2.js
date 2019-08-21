@@ -8,5 +8,5 @@ function psw2(){
 	return "MTkyNjA4MTc=";
 }
 function tip2(){
-	return "过于简单，不用提示。";
+	return "标题！";
 }
