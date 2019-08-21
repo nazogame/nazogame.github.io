@@ -63,7 +63,7 @@
 			}
 			function unl(){
 				var str=document.getElementById("key").value;
-				if(check1(str)){
+				if(check[n-1](str)){
 					document.getElementById("lock-type").innerText="解锁成功！";
 					document.getElementById("lock-pic").src="https://b2.bmp.ovh/imgs/2019/08/7ab595838f92cd71.jpg";
 					setTimeout(openque,1000);
@@ -86,7 +86,7 @@
 				document.getElementById("sub-pic").src="https://b2.bmp.ovh/imgs/2019/08/40e79dcd8e124528.jpg";
 				document.getElementById("acce").style.display="none";
 				document.getElementById("sub-type").innerText="正在检测......";
-				if(check2(tex)){
+				if(check[n](tex)){
 					document.getElementById("sub-pic").src="https://b2.bmp.ovh/imgs/2019/08/98c40ee02e0bf5de.jpg";
 					document.getElementById("acce").className="gre-but";
 					document.getElementById("acce").style.display="inline-block";
