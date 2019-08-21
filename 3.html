@@ -10,17 +10,17 @@
 			var tip=tip3();
 			var typ=0;
 			function def(){
-				document.getElementById("question").value=que;
+				document.getElementById("question").html=que;
 			}
 			function changeQue(){
 				if(typ==0){
-					document.getElementById("question").value=tip;
+					document.getElementById("question").html=tip;
 					document.getElementById("swt-but").style.background="linear-gradient(to right,white, blue)";
 					document.getElementById("switch-off").style.color="white";
 					document.getElementById("switch-on").style.color="blue";
 				}
 				else{
-					document.getElementById("question").value=que;
+					document.getElementById("question").html=que;
 					document.getElementById("swt-but").style.background="linear-gradient(to right,red, white)";
 					document.getElementById("switch-off").style.color="red";
 					document.getElementById("switch-on").style.color="white";
