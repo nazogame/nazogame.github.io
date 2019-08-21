@@ -8,5 +8,5 @@ function psw3(){
 	return "";
 }
 function tip3(){
-	return "入门题，不用提示";
+	return "过于简单，不用提示";
 }
