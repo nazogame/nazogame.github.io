@@ -1,0 +1,19 @@
+a {color: #009900;transition:color 0.5s;border-radius:10px;height:40px;font-family:Consolas;font-size:18px;}
+a:visited {color: #006600;}
+a:hover {color: #006600;}
+a:active {color: #006600;}
+
+.gre-but {background: #009900;color: #FFFFFF;transition:background 0.5s,color 0.5s;border-radius:10px;height:40px;font-family:Consolas;}
+.gre-but:visited {background: #FFFFFF;color:#009900;}
+.gre-but:hover {background: #FFFFFF;color:#009900;}
+.gre-but:active {background: #FFFFFF;color:#009900;}
+
+
+.red-but {background: #CC0000;color: #FFFFFF;transition:background 0.5s,color 0.5s;border-radius:10px;height:40px;font-family:Consolas;}
+.red-but:visited {background: #FFFFFF;color:#CC0000;}
+.red-but:hover {background: #FFFFFF;color:#CC0000;}
+.red-but:active {background: #FFFFFF;color:#CC0000;}
+
+body {background:#F5F5F5;font-family:Consolas;}
+h1,h2,h3,h4,h5,h6,link{font-family:Consolas;}
+code,pre,textarea,p,strong,input {font-family:Consolas;font-size:18px;}
