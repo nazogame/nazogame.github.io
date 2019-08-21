@@ -8,5 +8,5 @@ function psw3(){
 	return "";
 }
 function tip3(){
-	return "过于简单，不用提示";
+	return "奥特的V，蔡徐坤的U";
 }
