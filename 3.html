@@ -1,10 +1,159 @@
 <html>
-	<head></head>
+	<head>
+		<link rel="stylesheet" type="text/css" href="btf.css">
+		<script src = "JsCode/func-2.js"></script>
+		<script src = "JsCode/func-3.js"></script>
+		<script src = "JsCode/Base64.js"></script>
+		<script>
+			var que=que3();
+			var psw=psw3();
+			var tip=tip3();
+			var typ=0;
+			function def(){
+				document.getElementById("question").value=que;
+			}
+			function changeQue(){
+				if(typ==0){
+					document.getElementById("question").value=tip;
+					document.getElementById("swt-but").style.background="linear-gradient(to right,white, blue)";
+					document.getElementById("switch-off").style.color="white";
+					document.getElementById("switch-on").style.color="blue";
+				}
+				else{
+					document.getElementById("question").value=que;
+					document.getElementById("swt-but").style.background="linear-gradient(to right,red, white)";
+					document.getElementById("switch-off").style.color="red";
+					document.getElementById("switch-on").style.color="white";
+				}
+				typ=typ^1;
+			}
+			function dec(text) { 
+				var temp = document.createElement("div"); 
+				temp.innerHTML = text; 
+				var output = temp.innerText || temp.textContent; 
+				temp = null; 
+				return output; 
+			}
+			function che(){
+				var local_url = document.location.href; 
+				var get = local_url.indexOf("=");
+				var get_par = local_url.slice(get + 1); 
+				var sus=dec(get_par);
+				if(check1(sus)){
+					document.getElementById("blo").style.display="block";
+					document.getElementById("loc").style.display="none";
+					document.getElementById("chk").style.display="none";
+				}
+			}
+			 function sleep(milliSeconds) {
+				var startTime = new Date().getTime();
+				while (new Date().getTime() < startTime + milliSeconds) {
+					console.log(new Date().getTime());
+				}
+			}
+			function openque(){
+				document.getElementById("blo").style.display="block";
+				document.getElementById("loc").style.display="none";
+				document.getElementById("chk").style.display="none";
+			}
+			function nor(){
+				document.getElementById("unl-but").className="gre-but";
+				document.getElementById("key").readOnly=false;
+				document.getElementById("unl-but-inside").innerText="提交";
+			}
+			function unl(){
+				var str=document.getElementById("key").value;
+				if(check1(str)){
+					document.getElementById("lock-type").innerText="解锁成功！";
+					document.getElementById("lock-pic").src="https://b2.bmp.ovh/imgs/2019/08/7ab595838f92cd71.jpg";
+					setTimeout(openque,1000);
+				}
+				else{
+					document.getElementById("unl-but").className="red-but";
+					document.getElementById("unl-but-inside").innerText="错误";
+					document.getElementById("key").readOnly=true;
+					setTimeout(nor,5000);
+				}
+			}
+			function nxtlv(){
+				setTimeout("javascript:location.href='4.html?answer="+document.getElementById("answer").value+"'",0);
+			}
+			function checkans(){
+				var tex=document.getElementById("answer").value;
+				document.getElementById("blo").style.display="none";
+				document.getElementById("loc").style.display="none";
+				document.getElementById("chk").style.display="block";
+				document.getElementById("sub-pic").src="https://b2.bmp.ovh/imgs/2019/08/40e79dcd8e124528.jpg";
+				document.getElementById("acce").style.display="none";
+				document.getElementById("sub-type").innerText="正在检测......";
+				if(check2(tex)){
+					document.getElementById("sub-pic").src="https://b2.bmp.ovh/imgs/2019/08/98c40ee02e0bf5de.jpg";
+					document.getElementById("acce").className="gre-but";
+					document.getElementById("acce").style.display="inline-block";
+					document.getElementById("sub-type").innerText="答案正确!";
+					document.getElementById("sub-but-inside").innerText="继续";
+					document.getElementById("acce").onclick=function(){nxtlv();}
+				}
+				else{
+					document.getElementById("sub-pic").src="https://b2.bmp.ovh/imgs/2019/08/3a4404cfaa53597c.jpg";
+					document.getElementById("acce").className="red-but";
+					document.getElementById("acce").style.display="inline-block";
+					document.getElementById("sub-type").innerText="答案错误!";
+					document.getElementById("sub-but-inside").innerText="返回";
+					document.getElementById("acce").onclick=function(){openque();}
+				}
+			}
+		</script>
+	</head>
 	<body style="text-align:center;">
 		<div style="height:100px;opacity:1.0;"></div>
-		<div id="blo" style="border-radius:4px;box-shadow: #666 0px 0px 10px;
-								  height:500px;width:500px;background-color:#FFFFFF;margin:0 auto;">
-			<strong>敬请期待</strong>
+		<div id="blo" style="border-top-left-radius:4px;border-top-right-radius:4px;box-shadow: #666 0px 0px 10px;
+								  height:450px;width:500px;background-color:#FFFFFF;margin:0 auto;display:none;">
+			<table style="text-align:center;width:500px;"><tr><td><div style="height:10px;opacity:1.0;"></div></td></tr>
+			<tr>
+				<table><tr>
+				<td style="width:300px;height:30px;text-align:center;"><strong>简单题</strong></td>
+				<td style="height:30px;color:red;"><p id="switch-off">Que</p></td>
+				<td style="height:30px;"><button id="swt-but" onclick="changeQue()" 
+					style="width:100px;height:20px;background:linear-gradient(to right,red, white);
+					border-radius:10px;"></td>
+				<td style="height:30px;color:white;"><p id="switch-on">Tip</p></td>
+			</tr></table></tr>
+			<tr><td><div style="height:1px;background:#000000;width:500px"></div></td></tr>
+			<tr>
+				<td><p style="font-size:12px !important;">
+					思维难度:Nan&nbsp;&nbsp;|&nbsp;&nbsp;实践难度:Nan</p></td></tr>
+			<tr><td><textarea id="question" readonly="true" wrap="hard"
+					style="width:500px;height:300px;background:#FFFFFF;resize:none;"></textarea>
+			</td></tr>
+			<script>def();</script>
+			</table>
+			<table>
+			<tr><td><div style="height:10px;background:#FFFFFF;width:1px;opacity:1.0;"></div></td></tr>
+			<tr>
+				<td><input type="text" id="answer" placeholder="答案"
+					 style="height:40px;background:#EFEFEF;width:350px;"></td>
+				<td><button class="gre-but" style="width:140px;" onclick="checkans();"><strong>提交</strong></button></td></tr></table>
 		</div>
+		<div id="loc" style="border-top-left-radius:4px;border-top-right-radius:4px;box-shadow: #666 0px 0px 10px;
+								  height:450px;width:500px;background-color:#FFFFFF;margin:0 auto;display:block;">
+			<table style="text-align:center;width:500px;"><tr><td><div style="height:10px;opacity:1.0;"></div></td></tr>
+			<tr><td><p id="lock-type">输入上一关的答案解锁</p></td></tr>
+			<tr><td><img id="lock-pic" src="https://b2.bmp.ovh/imgs/2019/08/73fe7026169c5ed1.jpg" style="height:350px;"></img></td></tr></table>
+			<table>
+			<tr>
+				<td><input type="text" id="key" placeholder="密码"
+					 style="height:40px;background:#EFEFEF;width:350px;"></td>
+				<td><button id="unl-but" class="gre-but" onclick="unl();" style="width:140px;">
+					<strong id="unl-but-inside">提交</strong></button></td></tr></table>
+		</div>
+		<div id="chk" style="border-top-left-radius:4px;border-top-right-radius:4px;box-shadow: #666 0px 0px 10px;
+								  height:450px;width:500px;background-color:#FFFFFF;margin:0 auto;display:none;">
+			<table style="text-align:center;width:500px;"><tr><td><div style="height:10px;opacity:1.0;"></div></td></tr>
+			<tr><td><p id="sub-type">正在检测......</p></td></tr>
+			<tr><td><img id="sub-pic" src="https://b2.bmp.ovh/imgs/2019/08/40e79dcd8e124528.jpg" style="height:350px;"></img></td></tr></table>
+			<tr><td><button id="acce" class="" onclick="" style="width:140px;"><strong id="sub-but-inside">确认</strong></button></td></tr></table>
+		</div>
+		<script>che();</script>
 	</body>
 </html>
